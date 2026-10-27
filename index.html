@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HumiMimic — mimetic embodiment transfer of human–humanoid interaction from in-the-wild videos.">
+  <meta name="keywords" content="HumiMimic, HumiTransfer, humanoid robotics, motion retargeting, human-humanoid interaction">
+  <meta name="theme-color" content="#07110f">
+  <title>HumiMimic — Mimetic Embodiment Transfer</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro">
+  <link rel="icon" href="./static/images/aioz.svg">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="hero" id="top">
+    <div class="hero-media" aria-hidden="true">
+      <video class="hero-video is-active" data-hero-video muted playsinline preload="auto">
+        <source src="./asset/videos/title/title_r1_shadow.mp4" type="video/mp4">
+      </video>
+      <video class="hero-video" data-hero-video muted playsinline preload="auto">
+        <source src="./asset/videos/title/tiltle_mini_hi_dancing.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="hero-shade"></div>
+
+    <div class="hero-content shell">
+      <h1 class="publication-title">Mimetic Embodiment Transfer of Human–Humanoid Interaction from In-the-Wild Videos</h1>
+      <div class="authors" aria-label="Authors">
+        <a href="#">Nghia Le<sup>1</sup></a><a href="#">Khang Nguyen<sup>2</sup></a><a href="#">Ba Long Tran<sup>3</sup></a>
+        <a href="#">Thi Quynh Nhu Pham<sup>1</sup></a><a href="#">Binh X. Nguyen<sup>1</sup></a><a href="#">Tuong Do<sup>1,4,5</sup></a>
+        <a href="#">Erman Tjiputra<sup>1</sup></a><a href="#">Hoan Nguyen<sup>6</sup></a><a href="#">Tung D. Ta<sup>7</sup></a>
+        <a href="#">Baoru Huang<sup>4</sup></a><a href="#">Hai-Nguyen Nguyen<sup>3</sup></a><a href="#">Anh Nguyen<sup>4</sup></a>
+      </div>
+      <p class="affiliations">
+        <span><sup>1</sup>AIOZ</span><span><sup>2</sup>MBZUAI</span><span><sup>3</sup>RMIT University</span>
+        <span><sup>4</sup>University of Liverpool</span><span><sup>5</sup>National Tsing Hua University</span>
+        <span><sup>6</sup>University of Information Technology, VNUHCM</span><span><sup>7</sup>Keio University</span>
+      </p>
+      <div class="resource-links" aria-label="Project resources">
+        <a href="#" class="resource-link"><span class="icon"><i class="fas fa-file-pdf"></i></span><span>Paper</span></a>
+        <a href="#" class="resource-link"><span class="icon"><i class="ai ai-arxiv"></i></span><span>arXiv</span></a>
+        <a href="#" class="resource-link"><span class="icon"><i class="fab fa-github"></i></span><span>Code</span></a>
+        <a href="#" class="resource-link"><span class="icon"><i class="fas fa-database"></i></span><span>Dataset</span></a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section section-dark" id="demo">
+      <div class="shell">
+        <div class="section-heading compact-heading"><h2>Overview</h2><p>Given an in-the-wild human–human interaction video, HumiTransfer replaces one participant with a humanoid while preserving the interaction semantics and dynamics of the original human behavior.</p></div>
+        <div class="demo-frame reveal">
+          <video controls playsinline preload="metadata"><source src="./asset/videos/demo/ICRA27_1018_VI_i.mp4" type="video/mp4"></video>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="abstract">
+      <div class="shell narrow">
+        <p class="kicker">Abstract</p><h2>Abstract</h2>
+        <p class="abstract-copy">Enabling a humanoid to interact naturally with human partners requires preserving not only individual motions but also the spatial, semantic, and contact relationships underlying the interaction (<i>i.e.</i>, hugging, dancing, hand-shaking, etc.). Furthermore, a practical solution should generalize across various humanoid embodiments with distinct morphologies and kinematic constraints. To tackle this challenge, we propose HumiTransfer, a mimetic embodiment transfer framework that converts in-the-wild human–human interaction videos into physically plausible human–humanoid interactions. HumiTransfer first reconstructs 3D human motion with consistent foot-ground contact, then transfers one participant to a target humanoid embodiment via interaction modeling, using weighted joint-relative directions and anatomical offsets to prioritize interaction-critical inter-body relationships, while post-retargeting optimization enforces balance, contact, and collision avoidance. Subsequently, we apply HumiTransfer to 1,200 in-the-wild videos, producing approximately 500,000 frames of diverse interactions for the 26-DoF Unitree R1 Edu and the 23-DoF HighTorque Mini-hi humanoid robot, resulting in our HumiMimic dataset. Across both robots, HumiTransfer achieves superior motion fidelity, preserves inter-body relationships, and maintains contact accuracy compared with existing baselines. Moreover, we demonstrate that HumiMimic supports motion generation methods for synthesizing interactive humanoid motions following a human partner. Finally, our real robot deployments confirm the physical executability of the transferred motions in real-world settings.</p>
+      </div>
+    </section>
+
+    <section class="section" id="dataset">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">HumiMimic Dataset</p><h2>HumiMimic Dataset</h2></div><p>HumiMimic contains 1,200 human-humanoid interaction videos, yielding about 500,000 processed frames (approximately 4.6 video hours). The dataset covers co-movement, social exchanges, dual sports, sparring, partner dance, and other interactions.</p></div>
+        <h3 class="dataset-statistics-title">Dataset Statistics</h3>
+        <div class="dataset-statistics reveal">
+          <figure class="figure-card"><img src="./asset/figures/data-distribution.png" alt="HumiMimic sequence length and interaction category distributions" loading="lazy"><figcaption>Sequence length and interaction diversity across the collected videos.</figcaption></figure>
+          <div class="stat-row" aria-label="Dataset highlights">
+            <div><strong>1,200</strong><span>interaction videos</span></div>
+            <div><strong>≈500K</strong><span>processed frames</span></div>
+            <div><strong>4.6h</strong><span>of motion</span></div>
+          </div>
+        </div>
+
+        <div class="media-explorer reveal">
+          <div class="explorer-head"><h3>Diversity of Retargeted Human–Humanoid Motion</h3></div>
+          <div class="robot-video-group"><h4>Unitree R1 Edu</h4><div class="video-grid three-up">
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/diversity/r1/diversity_r1_drinking.mp4" type="video/mp4"></video><figcaption>Drinking</figcaption></figure>
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/diversity/r1/diversity_r1_mma.mp4" type="video/mp4"></video><figcaption>Sparring</figcaption></figure>
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/diversity/r1/diversity_r1_ringing_around.mp4" type="video/mp4"></video><figcaption>Dancing</figcaption></figure>
+          </div></div>
+          <div class="robot-video-group"><h4>HighTorque Mini-hi</h4><div class="video-grid three-up">
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/diversity/mini-hi/diversity_mini_hi_basketball_scale_shoulder_trimmed_240.mp4" type="video/mp4"></video><figcaption>Basketball</figcaption></figure>
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/diversity/mini-hi/diversity_mini_hi_bus_scale_shoulder.mp4" type="video/mp4"></video><figcaption>Conversing</figcaption></figure>
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/diversity/mini-hi/diversity_mini_hi_grappling_0340_120_250_rescaled_shoulder.mp4" type="video/mp4"></video><figcaption>Grappling</figcaption></figure>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" id="method">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">HumiTransfer</p><h2>HumiTransfer: Mimetic Embodiment Transfer</h2></div><p>HumiTransfer performs interaction-preserving human-to-humanoid motion retargeting followed by post-retargeting optimization.</p></div>
+        <figure class="framework-card reveal"><img src="./asset/figures/framework.png" alt="The three-stage HumiTransfer framework" loading="lazy"></figure>
+        <div class="method-copy reveal">
+          <p>HumiTransfer follows three stages. First, it tracks the human participants, detects body keypoints, reconstructs mesh-based full-body motion, and refines foot–ground contact. It then initializes one participant on the target humanoid through constrained inverse kinematics and preserves the interaction using weighted joint-relative directions and anatomical offsets. Finally, the retargeted motion is refined to maintain balance, preserve intended contact, and suppress unintended inter-body collisions.</p>
+        </div>
+
+        <div class="results-block reveal">
+          <div class="results-intro"><p class="kicker">Quantitative results</p><h3>Retargeting Performance on Different Humanoids</h3><p>MPJPE and IRD are reported in centimeters; CF1 measures contact preservation at a distance threshold of 20 cm.</p></div>
+          <div class="table-wrap"><table>
+            <thead><tr><th rowspan="2">Method</th><th colspan="3">Unitree R1 Edu</th><th colspan="3">HighTorque Mini-hi</th></tr><tr><th>MPJPE ↓</th><th>IRD ↓</th><th>CF1 ↑</th><th>MPJPE ↓</th><th>IRD ↓</th><th>CF1 ↑</th></tr></thead>
+            <tbody><tr><td>Naive IK</td><td>37.85</td><td>16.82</td><td>13.84</td><td>41.31</td><td>20.67</td><td>11.42</td></tr><tr><td>GMR</td><td>11.91</td><td>5.73</td><td>69.12</td><td>10.49</td><td>5.30</td><td>61.97</td></tr><tr><td>PAIR</td><td>9.37</td><td>4.16</td><td>74.54</td><td>12.79</td><td>6.24</td><td>59.41</td></tr><tr><td>HumiTransfer<sup>−</sup></td><td>10.13</td><td>4.08</td><td>80.90</td><td>11.63</td><td>6.14</td><td>65.29</td></tr><tr class="best"><td>HumiTransfer<sup>+</sup></td><td>6.31</td><td>2.84</td><td>81.97</td><td>7.58</td><td>3.67</td><td>78.15</td></tr></tbody>
+          </table></div>
+          <div class="baseline-descriptions">
+            <p><strong>Naive IK</strong> applies inverse-kinematics retargeting with uniform scaling.</p>
+            <p><strong>GMR</strong> is an optimization-based fitting method used as a motion-retargeting baseline.</p>
+            <p><strong>PAIR</strong> is an optimization-based fitting method evaluated on the same interaction sequences.</p>
+            <p><strong>HumiTransfer<sup>−</sup> / HumiTransfer<sup>+</sup></strong> denote our method without and with the semantic and distance-based weighting matrices, respectively.</p>
+          </div>
+        </div>
+
+        <div class="media-explorer baseline-explorer reveal">
+          <div class="explorer-head"><div><p class="kicker">Qualitative comparison</p><h3>Qualitative Comparison of Retargeting Methods</h3></div></div>
+          <div class="comparison-row"><h4>Unitree R1 Edu</h4><div class="video-grid four-up">
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/r1/rotated_method_r1_dancing_naive_180_400.mp4" type="video/mp4"></video><figcaption>Naive IK</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/r1/rotated_method_r1_dancing_gmr_180_400.mp4" type="video/mp4"></video><figcaption>GMR</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/r1/rotated_method_r1_dancing_pair_180_400.mp4" type="video/mp4"></video><figcaption>PAIR</figcaption></figure><figure class="video-card featured"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/r1/rotated_method_r1_dancing_ours_180_400.mp4" type="video/mp4"></video><figcaption>HumiTransfer <span>Ours</span></figcaption></figure>
+          </div></div>
+          <div class="comparison-row"><h4>HighTorque Mini-hi</h4><div class="video-grid four-up">
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/mini-hi/rotated_method_mini_hi_dancing_naive_180_400.mp4" type="video/mp4"></video><figcaption>Naive IK</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/mini-hi/rotated_method_mini_hi_dancing_gmr_180_400.mp4" type="video/mp4"></video><figcaption>GMR</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/mini-hi/rotated_method_mini_hi_dancing_pair_180_400.mp4" type="video/mp4"></video><figcaption>PAIR</figcaption></figure><figure class="video-card featured"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/baselines/mini-hi/rotated_method_mini_hi_dancing_ours_180_400.mp4" type="video/mp4"></video><figcaption>HumiTransfer <span>Ours</span></figcaption></figure>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="generative">
+      <div class="shell">
+        <div class="section-heading"><div><p class="kicker">Generative modeling</p><h2>Generative Human–Humanoid Interaction</h2></div><p>We use HumiMimic to benchmark generative models that synthesize responsive humanoid motion from a human partner's motion sequence.</p></div>
+
+        <div class="media-explorer generative-explorer reveal">
+          <div class="explorer-head"><div><h3>Qualitative Samples</h3></div></div>
+          <div class="comparison-row"><h4>Unitree R1 Edu - A person is sparring</h4><div class="video-grid four-up">
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/r1/gen_r1_mma_commdm_mimic_20fps.mp4" type="video/mp4"></video><figcaption>ComMDM</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/r1/gen_r1_mma_intergen_grapple_20fps.mp4" type="video/mp4"></video><figcaption>InterGen</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/r1/gen_r1_mma_remos_fall_20fps.mp4" type="video/mp4"></video><figcaption>ReMos</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/r1/gen_r1_mma_duo_good_20fps.mp4" type="video/mp4"></video><figcaption>Duolando</figcaption></figure>
+          </div></div>
+          <div class="comparison-row"><h4>HighTorque Mini-hi - A man is kicking a ball</h4><div class="video-grid four-up">
+            <figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/mini_hi/cropped_gen_mini_hi_soccer_commdm_run_rescaled_shoulder.mp4" type="video/mp4"></video><figcaption>ComMDM</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/mini_hi/cropped_gen_mini_hi_soccer_intergen_mimic_rescaled_shoulder.mp4" type="video/mp4"></video><figcaption>InterGen</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/mini_hi/cropped_gen_mini_hi_soccer_remos_capo_rescaled_shoulder.mp4" type="video/mp4"></video><figcaption>ReMos</figcaption></figure><figure class="video-card"><video controls muted loop playsinline preload="metadata" data-autoplay><source src="./asset/lower_res_videos/generative/mini_hi/cropped_gen_mini_hi_soccer_duo_desync_rescaled_shoulder.mp4" type="video/mp4"></video><figcaption>Duolando</figcaption></figure>
+          </div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-deploy" id="deployment">
+      <div class="shell">
+        <div class="section-heading light-heading"><div><p class="kicker">Real-world deployment</p><h2>Real-Robot Deployment</h2></div><p>We deploy the retargeted motions on the 26-DoF Unitree R1 Edu to evaluate their real-world executability.</p></div>
+        <div class="deploy-copy">
+          <p>Sequences from HumiMimic are optimized and mapped to the robot joints, checked against the robot motion constraints, and used to train a 26-action motion-tracking policy in <code>mjlab</code>. The trained actor is exported to ONNX and executed at 50 Hz in the C++ mimic controller using the robot motor states and IMU, with a fixed mapping from the common policy order to the Unitree SDK motor IDs. We demonstrate hand-shaking and hugging interactions on the physical Unitree R1 Edu.</p>
+        </div>
+        <div class="deploy-grid reveal"><figure class="deploy-card"><video controls muted loop playsinline preload="metadata"><source src="./asset/videos/deploy/cropped_hand_shaking_no_face_300.mp4" type="video/mp4"></video><figcaption><span>01</span> Handshake</figcaption></figure><figure class="deploy-card"><video controls muted loop playsinline preload="metadata"><source src="./asset/videos/deploy/cropped_hugging_no_face_300.mp4" type="video/mp4"></video><figcaption><span>02</span> Hug</figcaption></figure></div>
+      </div>
+    </section>
+
+    <section class="section section-paper" id="bibtex">
+      <div class="shell narrow">
+        <div class="bib-head"><div><p class="kicker">Citation</p><h2>BibTeX</h2></div><button class="copy-button" type="button" data-copy-bib>Copy</button></div>
+        <pre><code id="bibtex-code">TBD</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="shell"><p>HumiMimic · Human interaction, re-embodied.</p></div></footer>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</body>
+</html>
